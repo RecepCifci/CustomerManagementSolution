@@ -1,0 +1,56 @@
+﻿@model CustomerManagement.Entities.Product
+
+@{
+    ViewBag.Title = "Ürün Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>@ViewBag.Title</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Code)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Code)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="row">
+                <div class="col-lg-1">
+                    <div class="card bg-primary text-white shadow">
+                        <button class="card bg-primary text-white shadow" type="submit">Sil</button>
+                    </div>
+                </div>
+                <div class="col-xs-1">|</div>
+                <div class="col-lg-1">@Html.ActionLink("Listeye Geri Dön", "Index")</div>
+            </div>
+        </div>
+    }

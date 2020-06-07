@@ -1,0 +1,44 @@
+﻿@using CustomerManagement.Entities.ModelView
+@model ActivationViewModal<string>
+@{
+    ViewBag.Title = "UserActivate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+@*<h2>Kullanıcı Etkinleştirme</h2>*@
+
+<div class="container">
+    <div class="card  text-center">
+        <div class="card-header">
+            @Model.Header
+        </div>
+        <div class="card-body">
+            <blockquote class="blockquote mb-0">
+                <h5 class="card-title">@Model.Title</h5>
+                @if (Model.Items != null && Model.Items.Count > 0)
+            {
+                foreach (var item in Model.Items)
+                {
+                        <p class="card-text">item</p>
+                    }
+                }
+            </blockquote>
+        </div>
+    </div>
+</div>
+@{
+    string js = string.Empty;
+
+    if (Model.IsRedirecting)
+    {
+        js = "setTimeout(function () { window.location = '" + Model.RedirectingUrl + "'; }, " +
+     Model.RedirectingTimeout + ");";
+    }
+}
+<script>
+
+    $(function () {
+        @Html.Raw(js);
+    });
+
+</script>

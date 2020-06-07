@@ -1,0 +1,45 @@
+﻿@model CustomerManagement.Entities.Category
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Kategori kaydını silmek istediğinize emin misiniz?</h3>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="row">
+                <div class="col-lg-1">
+                    <div class="card bg-primary text-white shadow">
+                        <button class="card bg-primary text-white shadow" type="submit">Sil</button>
+                    </div>
+                </div>
+                <div class="col-xs-1">|</div>
+                <div class="col-lg-1">@Html.ActionLink("Listeye Geri Dön", "Index")</div>
+            </div>
+        </div>
+    }
+</div>

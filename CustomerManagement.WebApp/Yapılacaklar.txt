@@ -1,0 +1,3 @@
+﻿ActivationViewModal sayfası tamamlanacak
+Gmail entegrasyonu kontrol edilecek. Mail: custmngsys@gmail.com
+

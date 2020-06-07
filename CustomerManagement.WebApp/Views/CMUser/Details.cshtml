@@ -1,0 +1,36 @@
+﻿@model CustomerManagement.Entities.CMUser
+
+@{
+    ViewBag.Title = "Kullanıcı Detayları";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <h3>@ViewBag.Title</h3>
+        <hr />
+    </div>
+    <div class="row">
+        <div class="col-md-2">
+            <img src="~/Image/@Model.ProfileImageFilename" class="img-circle" width="128" height="128" />
+        </div>
+        <div class="col-md-10">
+            <h5>@Model.Fullname</h5>
+            <br />
+            <h6><b>@Html.DisplayNameFor(model => model.Name) : </b>@Model.Name</h6>
+            <h6><b>@Html.DisplayNameFor(model => model.Surname) : </b>@Model.Surname</h6>
+            <h6><b>@Html.DisplayNameFor(model => model.Email) : </b>@Model.Email</h6>
+            <h6><b>@Html.DisplayNameFor(model => model.Password) : </b>@Model.Password</h6>
+            <h6><b>@Html.DisplayNameFor(model => model.IsActive) : </b>@Model.IsActive</h6>
+            <h6><b>@Html.DisplayNameFor(model => model.IsActive) : </b>@Model.IsActive</h6>
+            @Html.HiddenFor(model => model.ActivateGuid)
+            <br />
+        </div>
+    </div>
+    <div class="row">
+        <p>
+            @Html.ActionLink("Düzenle", "Edit", new { activateGuid = Model.ActivateGuid })  |
+            @Html.ActionLink("Listeye Geri Dön", "Index")
+        </p>
+    </div>
+</div>

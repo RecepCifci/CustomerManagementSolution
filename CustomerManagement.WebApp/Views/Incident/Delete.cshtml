@@ -1,0 +1,102 @@
+﻿@model CustomerManagement.Entities.Incident
+
+@{
+    ViewBag.Title = "Talep Sil";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Talebi silmek istediğinize emin misiniz?</h3>
+<div>
+    <h4>Talep Sil</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Category.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Category.Name)
+        </dd>
+
+        <dt>
+            Müşteri Adı
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Customer.Name) @Html.DisplayFor(model => model.Customer.Surname)
+        </dd>
+
+        <dt>
+            Sahibi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Owner.Name) @Html.DisplayFor(model => model.Owner.Surname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Product.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Product.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.StateCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.StateCode)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <div class="row">
+                <div class="col-lg-1">
+                    <div class="card bg-primary text-white shadow">
+                        <button class="card bg-primary text-white shadow" type="submit">Sil</button>
+                    </div>
+                </div>
+                <div class="col-xs-1">|</div>
+                <div class="col-lg-1">@Html.ActionLink("Listeye Geri Dön", "Index")</div>
+            </div>
+        </div>
+    }
+</div>
